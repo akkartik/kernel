@@ -9,3 +9,10 @@ tracking convenient.
 Don't clone or pull this repo directly. I'm still figuring out the best way to
 stay abreast of upstream changes, and in the meantime I will be constantly
 rebasing this repo on upstream.
+
+Rough update process:
+```
+git pull --rebase upstream master
+git rebase --continue >&x
+grep CONFLICT x |grep modify/delete |column 3 |xargs git rm --force >& y
+```
